@@ -177,7 +177,16 @@ $(document).ready(function(){
             console.log(parseInt(window.cellObject22));
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
-               // window.thisQuarter211[indexThisQuarter] = parseInt(window.cellObject211[indexThisQuarter])+parseInt(window.cellObject210[indexThisQuarter])+parseInt(window.cellObject22[indexThisQuarter]);
+                if(typeof window.cellObject211[indexThisQuarter] == "undefined"){
+
+                }else{
+                    var a, b,c;
+                    if(typeof window.cellObject210[indexThisQuarter] == "undefined"){}else{a=parseInt(window.cellObject210[indexThisQuarter]);}
+                    if(typeof window.cellObject22[indexThisQuarter] == "undefined"){}else{b=parseInt(window.cellObject22[indexThisQuarter]);}
+                    if(typeof window.cellObject211[indexThisQuarter] == "undefined"){}else{c=parseInt(window.cellObject211[indexThisQuarter]);}
+                    window.thisQuarter211[indexThisQuarter] = c+b+a;
+
+                }
 
             }
         });
