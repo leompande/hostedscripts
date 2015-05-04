@@ -166,16 +166,17 @@ $(document).ready(function(){
         });
 
         $.each(autoCalculate.thisQuarter211,function(indexThisQuarter,valueThisQuarter){
+            var idArray = indexThisQuarter.split("-");
             console.log(parseInt(autoCalculate.cellObject211[indexThisQuarter]));
-            console.log(parseInt(autoCalculate.cellObject210[indexThisQuarter]));
-            console.log(parseInt(autoCalculate.cellObject22[indexThisQuarter]));
+            console.log(parseInt(autoCalculate.cellObject210["ItgPHCQ1hm6-"+idArray[1]+"-val"]));
+            console.log(parseInt(autoCalculate.cellObject22["nJPIfVSHB3O-"+idArray[1]+"-val"]));
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
-                autoCalculate.thisQuarter211[indexThisQuarter] = parseInt(autoCalculate.cellObject211[indexThisQuarter])+parseInt(autoCalculate.cellObject210[indexThisQuarter])+parseInt(autoCalculate.cellObject22[indexThisQuarter]);
+               // autoCalculate.thisQuarter211[indexThisQuarter] = parseInt(autoCalculate.cellObject211[indexThisQuarter])+parseInt(autoCalculate.cellObject210[indexThisQuarter])+parseInt(autoCalculate.cellObject22[indexThisQuarter]);
 
             }
         });
-        console.log(autoCalculate.thisQuarter211);
+        //console.log(autoCalculate.thisQuarter211);
         /**
          if(dataThisQuarter.dataValues){
         $.each(dataThisQuarter.dataValues,function(indexThisQuarter,valueThisQuarter){
