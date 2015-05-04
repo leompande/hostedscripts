@@ -7,7 +7,6 @@ $(document).ready(function(){
   autoCalculate.getLastQuarterPeriod = function(thisQuarterPeriod){
 	  this.thisQuarterPeriod = thisQuarterPeriod;
 	  var quarterArray = this.thisQuarterPeriod.split("Q");
-	  console.log(parseInt(quarterArray[1]));
 	  switch(parseInt(quarterArray[1])){
     case 1: 
 		return (parseInt(quarterArray[0])-1)+"Q4";
@@ -147,11 +146,11 @@ $(document).ready(function(){
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
                 autoCalculate.cellObject22[indexThisQuarter] = inputValue;
-
             }
-            }).done(function(response){
-                 console.log(response);
-            });
+            }).promise().done(function( arg1 ) {
+            // Will fire right away and alert "true"
+            alert(arg1);
+        });
 
         $.each(autoCalculate.cellObject210,function(indexThisQuarter,valueThisQuarter){
             if(indexThisQuarter.indexOf("-val")>=0){
