@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf3a6c03-b2b1-4310-bbf7-fdf472555075" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NACP_HIV_form.js" afterPath="$PROJECT_DIR$/NACP_HIV_form.js" />
-    </list>
+    <list default="true" id="bf3a6c03-b2b1-4310-bbf7-fdf472555075" name="Default" comment="" />
     <ignored path="hostedscripts.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -30,7 +28,7 @@
       <file leaf-file-name="NACP_HIV_form.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NACP_HIV_form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4292683" vertical-offset="742" max-vertical-offset="1602">
+            <state vertical-scroll-proportion="0.5609756" vertical-offset="688" max-vertical-offset="1602">
               <caret line="146" column="40" selection-start-line="146" selection-start-column="40" selection-end-line="146" selection-end-column="40" />
               <folding>
                 <element signature="e#332#762#0" expanded="false" />
@@ -347,7 +345,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NACP_HIV_form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4292683" vertical-offset="742" max-vertical-offset="1602">
+        <state vertical-scroll-proportion="0.5609756" vertical-offset="688" max-vertical-offset="1602">
           <caret line="146" column="40" selection-start-line="146" selection-start-column="40" selection-end-line="146" selection-end-column="40" />
           <folding>
             <element signature="e#332#762#0" expanded="false" />
