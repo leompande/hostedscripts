@@ -4,7 +4,8 @@ $(document).ready(function(){
   var orgUnit = dhis2.de.currentOrganisationUnitId;
   var dataSet = $('#selectedDataSetId').val();
   var dataSetPeriod=$('#selectedPeriodId').val();
-  
+  console.log("Period Selected");
+  console.log(dataSetPeriod);
   autoCalculate.getLastQuarterPeriod = function(thisQuarterPeriod){
 	  this.thisQuarterPeriod = thisQuarterPeriod;
 	  var quarterArray = this.thisQuarterPeriod.split("Q");
@@ -42,9 +43,9 @@ $(document).ready(function(){
                     success: function (dataThisQuarter) {//On Successful service call
 						
 						console.log("This Quarter");
-						console.log(dataLastQuarter);
+						console.log(dataThisQuarter.dataValues);
 						console.log("Last Quarter");
-						console.log(dataThisQuarter);
+						console.log(dataLastQuarter.dataValues);
 					},
 					error: function (xhr, textStatus, errorThrown) {
 							if (409 == xhr.status || 500 == xhr.status) // Invalid value or locked
@@ -101,9 +102,9 @@ $(document).ready(function(){
 							}
 							else // Offline, keep local value
 							{
-								
+                                ///setHeaderDelayMessage("some thing is ");
 								//markValue(fieldId, resultColor);
-//								setHeaderDelayMessage("Your offline auto sum will run next time your online");
+								setHeaderDelayMessage("Your offline auto sum will run next time your online");
 							}
 					}// When Service call fails
 		});	  
