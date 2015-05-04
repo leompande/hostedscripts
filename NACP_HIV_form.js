@@ -80,7 +80,7 @@ $(document).ready(function(){
 
   autoCalculate.sniffOnlineOffline = function (){
 	  var networkTracker = 1;
-	  url = "http://etl.moh.go.tz:8000/dhis-web-commons-stream/ping.action";
+	  url = "../dhis-web-commons-stream/ping.action";
 	  setInterval(function(){
 		  
 		  $.ajax({
