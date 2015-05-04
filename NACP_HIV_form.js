@@ -146,11 +146,10 @@ $(document).ready(function(){
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
                 window.cellObject22[indexThisQuarter] = inputValue;
-                console.log("Inside");
-                console.log(window.cellObject22);
+
             }
             });
-        console.log("Outside");
+        console.log("window.cellObject22");
         console.log(window.cellObject22);
         $.each(window.cellObject210,function(indexThisQuarter,valueThisQuarter){
             if(indexThisQuarter.indexOf("-val")>=0){
@@ -158,14 +157,16 @@ $(document).ready(function(){
                 window.cellObject210[indexThisQuarter] = inputValue;
             }
         });
-
+        console.log("window.cellObject210");
+        console.log(window.cellObject210);
         $.each(dataLastQuarter,function(indexLastQuarter,valueLastQuarter){
             if(indexLastQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexLastQuarter).val();
                 window.cellObject211[indexLastQuarter] = inputValue;
             }
         });
-
+        console.log("window.cellObject211");
+        console.log(window.cellObject211);
         $.each(window.thisQuarter211,function(indexThisQuarter,valueThisQuarter){
             var idArray = indexThisQuarter.split("-");
            //onsole.log(parseInt(window.cellObject211[indexThisQuarter]));
