@@ -44,8 +44,10 @@ $(document).ready(function(){
 
                         if(dataThisQuarter.dataValues){
                             $.each(dataThisQuarter.dataValues,function(indexThisQuarter,valueThisQuarter){
-                                console.log("valueThisQuarter.categoryOptionCombo :"+valueThisQuarter.categoryOptionCombo);
-                                console.log("valueThisQuarter.dataElement :"+valueThisQuarter.dataElement);
+                               // console.log("valueThisQuarter.categoryOptionCombo :"+valueThisQuarter.categoryOptionCombo);
+                                //console.log("valueThisQuarter.dataElement :"+valueThisQuarter.dataElement);
+                                console.log($("input#"+valueThisQuarter.dataElement+"-"+valueThisQuarter.categoryOptionCombo+"-val").parent("td").parent("tr").find("td:first").text());
+                                console.log($("input#"+valueThisQuarter.dataElement+"-"+valueThisQuarter.categoryOptionCombo+"-val").val());
                             });
                         }
                         if(dataLastQuarter.dataValues){
