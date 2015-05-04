@@ -166,11 +166,12 @@ $(document).ready(function(){
         });
 
         $.each(thisQuarter211,function(indexThisQuarter,valueThisQuarter){
-            console.log(indexThisQuarter);
-            console.log(valueThisQuarter);
+            console.log(parseInt(cellObject211[indexThisQuarter]));
+            console.log(parseInt(cellObject210[indexThisQuarter]));
+            console.log(parseInt(cellObject22[indexThisQuarter]));
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
-                thisQuarter211[indexThisQuarter] = cellObject211[indexThisQuarter]+cellObject210[indexThisQuarter]+cellObject22[indexThisQuarter];
+                thisQuarter211[indexThisQuarter] = parseInt(cellObject211[indexThisQuarter])+parseInt(cellObject210[indexThisQuarter])+parseInt(cellObject22[indexThisQuarter]);
 
             }
         });
