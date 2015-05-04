@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf3a6c03-b2b1-4310-bbf7-fdf472555075" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NACP_HIV_form.js" afterPath="$PROJECT_DIR$/NACP_HIV_form.js" />
-    </list>
+    <list default="true" id="bf3a6c03-b2b1-4310-bbf7-fdf472555075" name="Default" comment="" />
     <ignored path="hostedscripts.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
