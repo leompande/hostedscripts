@@ -148,8 +148,8 @@ $(document).ready(function(){
             console.log(valueThisQuarter);
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
-                console.log('$("input#"'+indexThisQuarter+').val()');
-                console.log($("input#"+indexThisQuarter).val());
+                cellObject22[indexThisQuarter] = inputValue;
+
             }
             });
 
@@ -158,11 +158,11 @@ $(document).ready(function(){
             console.log(valueThisQuarter);
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
-                console.log('$("input#"'+indexThisQuarter+').val()');
-                console.log($("input#"+indexThisQuarter).val());
+                cellObject210[indexThisQuarter] = inputValue;
             }
         });
-
+        console.log(cellObject22);
+        console.log(cellObject210);
         /**
          if(dataThisQuarter.dataValues){
         $.each(dataThisQuarter.dataValues,function(indexThisQuarter,valueThisQuarter){
