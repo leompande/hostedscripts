@@ -138,49 +138,49 @@ $(document).ready(function(){
 
         var inputThisQuarter210 = null;
 
-        autoCalculate.cellObject211 = {"totalZDEAnnS7BO0":null,"indicatorrtLNTzPIEEp":null,"ZDEAnnS7BO0-nehCW5s6Hx4-val":null,"ZDEAnnS7BO0-ttFf9vc6pnB-val":null,"ZDEAnnS7BO0-Xns0ysCNhcv-val":null,"ZDEAnnS7BO0-OKxxCNhyCrd-val":null,"indicatorEiyef1C8q6i":null,"ZDEAnnS7BO0-IR5epaaFjxT-val":null,"ZDEAnnS7BO0-YpFuX3wm6r8-val":null,"ZDEAnnS7BO0-cmlhcvPcdol-val":null,"ZDEAnnS7BO0-KmmKuXofUzA-val":null,"X0CIZT6HSEo-uGIJ6IdkP7Q-val":null};
-        autoCalculate.cellObject22  = {"totalItgPHCQ1hm6":null,"indicatorvGbgnXHsvVl":null,"ItgPHCQ1hm6-nehCW5s6Hx4-val":null,"ItgPHCQ1hm6-ttFf9vc6pnB-val":null,"ItgPHCQ1hm6-Xns0ysCNhcv-val":null,"ItgPHCQ1hm6-OKxxCNhyCrd-val":null,"indicatorWOYihHyMv7d":null,"ItgPHCQ1hm6-IR5epaaFjxT-val":null,"ItgPHCQ1hm6-YpFuX3wm6r8-val":null,"ItgPHCQ1hm6-cmlhcvPcdol-val":null,"ItgPHCQ1hm6-KmmKuXofUzA-val":null,"xVbmMwUk5ug-uGIJ6IdkP7Q-val":null,"Wcsc9U3fMIx-uGIJ6IdkP7Q-val":null};
-        autoCalculate.cellObject210 = {"totalnJPIfVSHB3O":null,"indicatorUrPbNJ7oJvQ":null,"nJPIfVSHB3O-nehCW5s6Hx4-val":null,"nJPIfVSHB3O-ttFf9vc6pnB-val":null,"nJPIfVSHB3O-Xns0ysCNhcv-val":null,"nJPIfVSHB3O-OKxxCNhyCrd-val":null,"indicatorsvW4HkckDQr":null,"nJPIfVSHB3O-IR5epaaFjxT-val":null,"nJPIfVSHB3O-YpFuX3wm6r8-val":null,"nJPIfVSHB3O-cmlhcvPcdol-val":null,"nJPIfVSHB3O-KmmKuXofUzA-val":null,"fJafOIjKvRu-uGIJ6IdkP7Q-val":null};
-        autoCalculate.thisQuarter211 = autoCalculate.cellObject211;
-        $.each(autoCalculate.cellObject22,function(indexThisQuarter,valueThisQuarter){
+        window.cellObject211 = {"totalZDEAnnS7BO0":null,"indicatorrtLNTzPIEEp":null,"ZDEAnnS7BO0-nehCW5s6Hx4-val":null,"ZDEAnnS7BO0-ttFf9vc6pnB-val":null,"ZDEAnnS7BO0-Xns0ysCNhcv-val":null,"ZDEAnnS7BO0-OKxxCNhyCrd-val":null,"indicatorEiyef1C8q6i":null,"ZDEAnnS7BO0-IR5epaaFjxT-val":null,"ZDEAnnS7BO0-YpFuX3wm6r8-val":null,"ZDEAnnS7BO0-cmlhcvPcdol-val":null,"ZDEAnnS7BO0-KmmKuXofUzA-val":null,"X0CIZT6HSEo-uGIJ6IdkP7Q-val":null};
+        window.cellObject22  = {"totalItgPHCQ1hm6":null,"indicatorvGbgnXHsvVl":null,"ItgPHCQ1hm6-nehCW5s6Hx4-val":null,"ItgPHCQ1hm6-ttFf9vc6pnB-val":null,"ItgPHCQ1hm6-Xns0ysCNhcv-val":null,"ItgPHCQ1hm6-OKxxCNhyCrd-val":null,"indicatorWOYihHyMv7d":null,"ItgPHCQ1hm6-IR5epaaFjxT-val":null,"ItgPHCQ1hm6-YpFuX3wm6r8-val":null,"ItgPHCQ1hm6-cmlhcvPcdol-val":null,"ItgPHCQ1hm6-KmmKuXofUzA-val":null,"xVbmMwUk5ug-uGIJ6IdkP7Q-val":null,"Wcsc9U3fMIx-uGIJ6IdkP7Q-val":null};
+        window.cellObject210 = {"totalnJPIfVSHB3O":null,"indicatorUrPbNJ7oJvQ":null,"nJPIfVSHB3O-nehCW5s6Hx4-val":null,"nJPIfVSHB3O-ttFf9vc6pnB-val":null,"nJPIfVSHB3O-Xns0ysCNhcv-val":null,"nJPIfVSHB3O-OKxxCNhyCrd-val":null,"indicatorsvW4HkckDQr":null,"nJPIfVSHB3O-IR5epaaFjxT-val":null,"nJPIfVSHB3O-YpFuX3wm6r8-val":null,"nJPIfVSHB3O-cmlhcvPcdol-val":null,"nJPIfVSHB3O-KmmKuXofUzA-val":null,"fJafOIjKvRu-uGIJ6IdkP7Q-val":null};
+        window.thisQuarter211 = window.cellObject211;
+        $.each(window.cellObject22,function(indexThisQuarter,valueThisQuarter){
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
-                autoCalculate.cellObject22[indexThisQuarter] = inputValue;
+                window.cellObject22[indexThisQuarter] = inputValue;
                 console.log("Inside");
-                console.log(autoCalculate.cellObject22);
+                console.log(window.cellObject22);
             }
             });
         console.log("Outside");
-        console.log(autoCalculate.cellObject22);
-        $.each(autoCalculate.cellObject210,function(indexThisQuarter,valueThisQuarter){
+        console.log(window.cellObject22);
+        $.each(window.cellObject210,function(indexThisQuarter,valueThisQuarter){
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
-                autoCalculate.cellObject210[indexThisQuarter] = inputValue;
+                window.cellObject210[indexThisQuarter] = inputValue;
             }
         });
 
         $.each(dataLastQuarter,function(indexLastQuarter,valueLastQuarter){
             if(indexLastQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexLastQuarter).val();
-                autoCalculate.cellObject211[indexLastQuarter] = inputValue;
+                window.cellObject211[indexLastQuarter] = inputValue;
             }
         });
 
-        $.each(autoCalculate.thisQuarter211,function(indexThisQuarter,valueThisQuarter){
+        $.each(window.thisQuarter211,function(indexThisQuarter,valueThisQuarter){
             var idArray = indexThisQuarter.split("-");
-           //onsole.log(parseInt(autoCalculate.cellObject211[indexThisQuarter]));
-            console.log(parseInt(autoCalculate.cellObject211));
-            //nsole.log(parseInt(autoCalculate.cellObject210["ItgPHCQ1hm6-"+idArray[1]+"-val"]));
-            console.log(parseInt(autoCalculate.cellObject210));
-            //nsole.log(parseInt(autoCalculate.cellObject22["nJPIfVSHB3O-"+idArray[1]+"-val"]));
-            console.log(parseInt(autoCalculate.cellObject22));
+           //onsole.log(parseInt(window.cellObject211[indexThisQuarter]));
+            console.log(parseInt(window.cellObject211));
+            //nsole.log(parseInt(window.cellObject210["ItgPHCQ1hm6-"+idArray[1]+"-val"]));
+            console.log(parseInt(window.cellObject210));
+            //nsole.log(parseInt(window.cellObject22["nJPIfVSHB3O-"+idArray[1]+"-val"]));
+            console.log(parseInt(window.cellObject22));
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
-               // autoCalculate.thisQuarter211[indexThisQuarter] = parseInt(autoCalculate.cellObject211[indexThisQuarter])+parseInt(autoCalculate.cellObject210[indexThisQuarter])+parseInt(autoCalculate.cellObject22[indexThisQuarter]);
+               // window.thisQuarter211[indexThisQuarter] = parseInt(window.cellObject211[indexThisQuarter])+parseInt(window.cellObject210[indexThisQuarter])+parseInt(window.cellObject22[indexThisQuarter]);
 
             }
         });
-        //console.log(autoCalculate.thisQuarter211);
+        //console.log(window.thisQuarter211);
         /**
          if(dataThisQuarter.dataValues){
         $.each(dataThisQuarter.dataValues,function(indexThisQuarter,valueThisQuarter){
@@ -203,7 +203,7 @@ $(document).ready(function(){
          Hence Formular translation of Auto Calculate: 2.11 = 2.11(lQ)+2.2(tQ)+2.10(tQ) will be
          */
 
-        resultThisQuarter = resultLastQuarter + inputThisQuarter22 + inputThisQuarter210;
+        //resultThisQuarter = resultLastQuarter + inputThisQuarter22 + inputThisQuarter210;
 
     }
 });
