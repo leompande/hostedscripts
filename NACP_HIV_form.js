@@ -146,8 +146,21 @@ $(document).ready(function(){
         $.each(cellObject22,function(indexThisQuarter,valueThisQuarter){
             console.log(indexThisQuarter);
             console.log(valueThisQuarter);
-            // console.log($("input#"+valueThisQuarter.dataElement+"-"+valueThisQuarter.categoryOptionCombo+"-val").parent("td").parent("tr").find("td:first").text());
-            // console.log($("input#"+valueThisQuarter.dataElement+"-"+valueThisQuarter.categoryOptionCombo+"-val").val());
+            if(indexThisQuarter.indexOf("-val")>=0){
+                var inputValue = $("input#"+indexThisQuarter).val();
+                console.log('$("input#"'+indexThisQuarter+').val()');
+                console.log($("input#"+indexThisQuarter).val());
+            }
+            });
+
+        $.each(cellObject210,function(indexThisQuarter,valueThisQuarter){
+            console.log(indexThisQuarter);
+            console.log(valueThisQuarter);
+            if(indexThisQuarter.indexOf("-val")>=0){
+                var inputValue = $("input#"+indexThisQuarter).val();
+                console.log('$("input#"'+indexThisQuarter+').val()');
+                console.log($("input#"+indexThisQuarter).val());
+            }
         });
 
         /**
