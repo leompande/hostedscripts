@@ -4,8 +4,6 @@ $(document).ready(function(){
   var orgUnit = dhis2.de.currentOrganisationUnitId;
   var dataSet = $('#selectedDataSetId').val();
   var dataSetPeriod=$('#selectedPeriodId').val();
-  console.log("Period Selected");
-  console.log(dataSetPeriod);
   autoCalculate.getLastQuarterPeriod = function(thisQuarterPeriod){
 	  this.thisQuarterPeriod = thisQuarterPeriod;
 	  var quarterArray = this.thisQuarterPeriod.split("Q");
@@ -42,19 +40,7 @@ $(document).ready(function(){
                     dataType: "json", 	//Expected data format from server
                     success: function (dataThisQuarter) {//On Successful service call
 
-                        if(dataThisQuarter.dataValues){
-                            $.each(dataThisQuarter.dataValues,function(indexThisQuarter,valueThisQuarter){
-                               // console.log("valueThisQuarter.categoryOptionCombo :"+valueThisQuarter.categoryOptionCombo);
-                                //console.log("valueThisQuarter.dataElement :"+valueThisQuarter.dataElement);
-                                console.log($("input#"+valueThisQuarter.dataElement+"-"+valueThisQuarter.categoryOptionCombo+"-val").parent("td").parent("tr").find("td:first").text());
-                                console.log($("input#"+valueThisQuarter.dataElement+"-"+valueThisQuarter.categoryOptionCombo+"-val").val());
-                            });
-                        }
-                        if(dataLastQuarter.dataValues){
-                            $.each(dataLastQuarter.dataValues,function(indexLastQuarter,valueLastQuarter){
-                                console.log(valueLastQuarter);
-                            });
-                        }
+                        autoCalculate.produceTotal(dataThisQuarter,dataLastQuarter);
 
 					},
 					error: function (xhr, textStatus, errorThrown) {
@@ -67,7 +53,7 @@ $(document).ready(function(){
 							{
 							}
 					}// When Service call fails
-		}); 					
+		            });
 						
                     },
                     error: function (xhr, textStatus, errorThrown) {
@@ -87,9 +73,7 @@ $(document).ready(function(){
  autoCalculate.getThisQuarterData = function(){
 	  
 	  }	 
-	  
-
-  autoCalculate.sniffOnlineOffline = function (){
+ autoCalculate.sniffOnlineOffline = function (){
 	  var networkTracker = 1;
 	  url = "../dhis-web-commons-stream/ping.action";
 	  setInterval(function(){
@@ -123,3 +107,71 @@ $(document).ready(function(){
 	  	}
 	  autoCalculate.sniffOnlineOffline();
 });
+
+autoCalculate.produceTotal = function(dataThisQuarter,dataLastQuarter){
+
+    //Auto Calculate: 2.11 = 2.11(lQ)+2.2(tQ)+2.10(tQ) from PMTC
+    /**
+     *	this is the variable that carries calculated value from formular
+     *	Auto Calculate: 2.11 = 2.11(lQ)+2.2(tQ)+2.10(tQ) from PMTC
+     */
+    var resultThisQuarter = null;
+
+
+    /**
+     *	this is the variable that carries  value of 2.11(lQ) from formular
+     *	Auto Calculate: 2.11 = 2.11(lQ)+2.2(tQ)+2.10(tQ) from PMTC
+     */
+    var resultLastQuarter = null;
+
+
+    /**
+     *	this is the variable that carries  value of 2.2(tQ) from formular
+     *	Auto Calculate: 2.11 = 2.11(lQ)+2.2(tQ)+2.10(tQ) from PMTC
+     */
+
+    var inputThisQuarter22 = null;
+
+
+    /**
+     *	this is the variable that carries  value of 2.10(tQ) from formular
+     *	Auto Calculate: 2.11 = 2.11(lQ)+2.2(tQ)+2.10(tQ) from PMTC
+     */
+
+    var inputThisQuarter210 = null;
+
+    var cellObject211 = {"totalZDEAnnS7BO0":null,"indicatorrtLNTzPIEEp":null,"ZDEAnnS7BO0-nehCW5s6Hx4-val":null,"ZDEAnnS7BO0-ttFf9vc6pnB-val":null,"ZDEAnnS7BO0-Xns0ysCNhcv-val":null,"ZDEAnnS7BO0-OKxxCNhyCrd-val":null,"indicatorEiyef1C8q6i":null,"ZDEAnnS7BO0-IR5epaaFjxT-val":null,"ZDEAnnS7BO0-YpFuX3wm6r8-val":null,"ZDEAnnS7BO0-cmlhcvPcdol-val":null,"ZDEAnnS7BO0-KmmKuXofUzA-val":null,"X0CIZT6HSEo-uGIJ6IdkP7Q-val":null};
+    var cellObject22  = {"totalItgPHCQ1hm6":null,"indicatorvGbgnXHsvVl":null,"ItgPHCQ1hm6-nehCW5s6Hx4-val":null,"ItgPHCQ1hm6-ttFf9vc6pnB-val":null,"ItgPHCQ1hm6-Xns0ysCNhcv-val":null,"ItgPHCQ1hm6-OKxxCNhyCrd-val":null,"indicatorWOYihHyMv7d":null,"ItgPHCQ1hm6-IR5epaaFjxT-val":null,"ItgPHCQ1hm6-YpFuX3wm6r8-val":null,"ItgPHCQ1hm6-cmlhcvPcdol-val":null,"ItgPHCQ1hm6-KmmKuXofUzA-val":null,"xVbmMwUk5ug-uGIJ6IdkP7Q-val":null,"Wcsc9U3fMIx-uGIJ6IdkP7Q-val":null};
+    var cellObject210 = {"totalnJPIfVSHB3O":null,"indicatorUrPbNJ7oJvQ":null,"nJPIfVSHB3O-nehCW5s6Hx4-val":null,"nJPIfVSHB3O-ttFf9vc6pnB-val":null,"nJPIfVSHB3O-Xns0ysCNhcv-val":null,"nJPIfVSHB3O-OKxxCNhyCrd-val":null,"indicatorsvW4HkckDQr":null,"nJPIfVSHB3O-IR5epaaFjxT-val":null,"nJPIfVSHB3O-YpFuX3wm6r8-val":null,"nJPIfVSHB3O-cmlhcvPcdol-val":null,"nJPIfVSHB3O-KmmKuXofUzA-val":null,"fJafOIjKvRu-uGIJ6IdkP7Q-val":null};
+
+    $.each(cellObject22,function(indexThisQuarter,valueThisQuarter){
+            console.log(valueThisQuarter);
+        // console.log($("input#"+valueThisQuarter.dataElement+"-"+valueThisQuarter.categoryOptionCombo+"-val").parent("td").parent("tr").find("td:first").text());
+        // console.log($("input#"+valueThisQuarter.dataElement+"-"+valueThisQuarter.categoryOptionCombo+"-val").val());
+    });
+
+/**
+    if(dataThisQuarter.dataValues){
+        $.each(dataThisQuarter.dataValues,function(indexThisQuarter,valueThisQuarter){
+
+           // console.log($("input#"+valueThisQuarter.dataElement+"-"+valueThisQuarter.categoryOptionCombo+"-val").parent("td").parent("tr").find("td:first").text());
+           // console.log($("input#"+valueThisQuarter.dataElement+"-"+valueThisQuarter.categoryOptionCombo+"-val").val());
+        });
+    }
+    if(dataLastQuarter.dataValues){
+        $.each(dataLastQuarter.dataValues,function(indexLastQuarter,valueLastQuarter){
+
+           // console.log($("input#"+valueLastQuarter.dataElement+"-"+valueLastQuarter.categoryOptionCombo+"-val").parent("td").parent("tr").find("td:first").text());
+           // console.log($("input#"+valueLastQuarter.dataElement+"-"+valueLastQuarter.categoryOptionCombo+"-val").val());
+        });
+    }
+*/
+
+
+    /**
+     Hence Formular translation of Auto Calculate: 2.11 = 2.11(lQ)+2.2(tQ)+2.10(tQ) will be
+     */
+
+    resultThisQuarter = resultLastQuarter + inputThisQuarter22 + inputThisQuarter210;
+
+}
