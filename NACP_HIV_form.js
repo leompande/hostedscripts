@@ -144,6 +144,7 @@ $(document).ready(function(){
         var cellObject210 = {"totalnJPIfVSHB3O":null,"indicatorUrPbNJ7oJvQ":null,"nJPIfVSHB3O-nehCW5s6Hx4-val":null,"nJPIfVSHB3O-ttFf9vc6pnB-val":null,"nJPIfVSHB3O-Xns0ysCNhcv-val":null,"nJPIfVSHB3O-OKxxCNhyCrd-val":null,"indicatorsvW4HkckDQr":null,"nJPIfVSHB3O-IR5epaaFjxT-val":null,"nJPIfVSHB3O-YpFuX3wm6r8-val":null,"nJPIfVSHB3O-cmlhcvPcdol-val":null,"nJPIfVSHB3O-KmmKuXofUzA-val":null,"fJafOIjKvRu-uGIJ6IdkP7Q-val":null};
 
         $.each(cellObject22,function(indexThisQuarter,valueThisQuarter){
+            console.log(indexThisQuarter);
             console.log(valueThisQuarter);
             // console.log($("input#"+valueThisQuarter.dataElement+"-"+valueThisQuarter.categoryOptionCombo+"-val").parent("td").parent("tr").find("td:first").text());
             // console.log($("input#"+valueThisQuarter.dataElement+"-"+valueThisQuarter.categoryOptionCombo+"-val").val());
