@@ -185,7 +185,7 @@ $(document).ready(function(){
                     if(typeof window.cellObject22[indexThisQuarter] == "undefined"){}else{b=parseInt(window.cellObject22[indexThisQuarter]);}
                     if(typeof window.cellObject211[indexThisQuarter] == "undefined"){}else{c=parseInt(window.cellObject211[indexThisQuarter]);}
                     window.thisQuarter211[indexThisQuarter] = c+b+a;
-
+console.log(window.thisQuarter211[indexThisQuarter]);
                 }
 
             }
