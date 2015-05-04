@@ -146,12 +146,12 @@ $(document).ready(function(){
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
                 autoCalculate.cellObject22[indexThisQuarter] = inputValue;
+                console.log("Inside");
+                console.log(autoCalculate.cellObject22);
             }
-            }).promise().done(function( arg1 ) {
-            // Will fire right away and alert "true"
-            alert(arg1);
-        });
-
+            });
+        console.log("Outside");
+        console.log(autoCalculate.cellObject22);
         $.each(autoCalculate.cellObject210,function(indexThisQuarter,valueThisQuarter){
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
