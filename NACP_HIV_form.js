@@ -41,14 +41,11 @@ $(document).ready(function(){
                     url: thisQuarterUrl, 		// Location of the service
                     dataType: "json", 	//Expected data format from server
                     success: function (dataThisQuarter) {//On Successful service call
-						
-						console.log("This Quarter");
-						console.log(dataThisQuarter.dataValues);
-						console.log("Last Quarter");
-						console.log(dataLastQuarter.dataValues);
+
                         if(dataThisQuarter.dataValues){
                             $.each(dataThisQuarter.dataValues,function(indexThisQuarter,valueThisQuarter){
-                                console.log(valueThisQuarter);
+                                console.log("valueThisQuarter.categoryOptionCombo :"+valueThisQuarter.categoryOptionCombo);
+                                console.log("valueThisQuarter.dataElement :"+valueThisQuarter.dataElement);
                             });
                         }
                         if(dataLastQuarter.dataValues){
