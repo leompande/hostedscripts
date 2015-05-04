@@ -149,6 +149,8 @@ $(document).ready(function(){
                 autoCalculate.cellObject22[indexThisQuarter] = inputValue;
 
             }
+            }).done(function(response){
+                 console.log(response);
             });
 
         $.each(autoCalculate.cellObject210,function(indexThisQuarter,valueThisQuarter){
@@ -167,11 +169,11 @@ $(document).ready(function(){
 
         $.each(autoCalculate.thisQuarter211,function(indexThisQuarter,valueThisQuarter){
             var idArray = indexThisQuarter.split("-");
-            console.log(parseInt(autoCalculate.cellObject211[indexThisQuarter]));
+           //onsole.log(parseInt(autoCalculate.cellObject211[indexThisQuarter]));
             console.log(parseInt(autoCalculate.cellObject211));
-            console.log(parseInt(autoCalculate.cellObject210["ItgPHCQ1hm6-"+idArray[1]+"-val"]));
+            //nsole.log(parseInt(autoCalculate.cellObject210["ItgPHCQ1hm6-"+idArray[1]+"-val"]));
             console.log(parseInt(autoCalculate.cellObject210));
-            console.log(parseInt(autoCalculate.cellObject22["nJPIfVSHB3O-"+idArray[1]+"-val"]));
+            //nsole.log(parseInt(autoCalculate.cellObject22["nJPIfVSHB3O-"+idArray[1]+"-val"]));
             console.log(parseInt(autoCalculate.cellObject22));
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
