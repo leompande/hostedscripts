@@ -46,9 +46,17 @@ $(document).ready(function(){
 						console.log(dataThisQuarter.dataValues);
 						console.log("Last Quarter");
 						console.log(dataLastQuarter.dataValues);
-                        $.each(dataLastQuarter.dataValues,function(indexLastQuarter,valueLastQuarter){
-                            console.log(valueLastQuarter);
-                        });
+                        if(dataThisQuarter.dataValues){
+                            $.each(dataThisQuarter.dataValues,function(indexThisQuarter,valueThisQuarter){
+                                console.log(valueThisQuarter);
+                            });
+                        }
+                        if(dataLastQuarter.dataValues){
+                            $.each(dataLastQuarter.dataValues,function(indexLastQuarter,valueLastQuarter){
+                                console.log(valueLastQuarter);
+                            });
+                        }
+
 					},
 					error: function (xhr, textStatus, errorThrown) {
 							if (409 == xhr.status || 500 == xhr.status) // Invalid value or locked
