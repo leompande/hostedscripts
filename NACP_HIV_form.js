@@ -138,9 +138,9 @@ $(document).ready(function(){
 
         var inputThisQuarter210 = null;
 
-        window.cellObject211 = {"totalZDEAnnS7BO0":null,"indicatorrtLNTzPIEEp":null,"ZDEAnnS7BO0-nehCW5s6Hx4-val":null,"ZDEAnnS7BO0-ttFf9vc6pnB-val":null,"ZDEAnnS7BO0-Xns0ysCNhcv-val":null,"ZDEAnnS7BO0-OKxxCNhyCrd-val":null,"indicatorEiyef1C8q6i":null,"ZDEAnnS7BO0-IR5epaaFjxT-val":null,"ZDEAnnS7BO0-YpFuX3wm6r8-val":null,"ZDEAnnS7BO0-cmlhcvPcdol-val":null,"ZDEAnnS7BO0-KmmKuXofUzA-val":null,"X0CIZT6HSEo-uGIJ6IdkP7Q-val":null};
-        window.cellObject22  = {"totalItgPHCQ1hm6":null,"indicatorvGbgnXHsvVl":null,"ItgPHCQ1hm6-nehCW5s6Hx4-val":null,"ItgPHCQ1hm6-ttFf9vc6pnB-val":null,"ItgPHCQ1hm6-Xns0ysCNhcv-val":null,"ItgPHCQ1hm6-OKxxCNhyCrd-val":null,"indicatorWOYihHyMv7d":null,"ItgPHCQ1hm6-IR5epaaFjxT-val":null,"ItgPHCQ1hm6-YpFuX3wm6r8-val":null,"ItgPHCQ1hm6-cmlhcvPcdol-val":null,"ItgPHCQ1hm6-KmmKuXofUzA-val":null,"xVbmMwUk5ug-uGIJ6IdkP7Q-val":null,"Wcsc9U3fMIx-uGIJ6IdkP7Q-val":null};
-        window.cellObject210 = {"totalnJPIfVSHB3O":null,"indicatorUrPbNJ7oJvQ":null,"nJPIfVSHB3O-nehCW5s6Hx4-val":null,"nJPIfVSHB3O-ttFf9vc6pnB-val":null,"nJPIfVSHB3O-Xns0ysCNhcv-val":null,"nJPIfVSHB3O-OKxxCNhyCrd-val":null,"indicatorsvW4HkckDQr":null,"nJPIfVSHB3O-IR5epaaFjxT-val":null,"nJPIfVSHB3O-YpFuX3wm6r8-val":null,"nJPIfVSHB3O-cmlhcvPcdol-val":null,"nJPIfVSHB3O-KmmKuXofUzA-val":null,"fJafOIjKvRu-uGIJ6IdkP7Q-val":null};
+        window.cellObject211 = {"totalZDEAnnS7BO0":0,"indicatorrtLNTzPIEEp":0,"ZDEAnnS7BO0-nehCW5s6Hx4-val":0,"ZDEAnnS7BO0-ttFf9vc6pnB-val":0,"ZDEAnnS7BO0-Xns0ysCNhcv-val":0,"ZDEAnnS7BO0-OKxxCNhyCrd-val":0,"indicatorEiyef1C8q6i":0,"ZDEAnnS7BO0-IR5epaaFjxT-val":0,"ZDEAnnS7BO0-YpFuX3wm6r8-val":0,"ZDEAnnS7BO0-cmlhcvPcdol-val":0,"ZDEAnnS7BO0-KmmKuXofUzA-val":0,"X0CIZT6HSEo-uGIJ6IdkP7Q-val":0};
+        window.cellObject22  = {"totalItgPHCQ1hm6":0,"indicatorvGbgnXHsvVl":0,"ItgPHCQ1hm6-nehCW5s6Hx4-val":0,"ItgPHCQ1hm6-ttFf9vc6pnB-val":0,"ItgPHCQ1hm6-Xns0ysCNhcv-val":0,"ItgPHCQ1hm6-OKxxCNhyCrd-val":0,"indicatorWOYihHyMv7d":0,"ItgPHCQ1hm6-IR5epaaFjxT-val":0,"ItgPHCQ1hm6-YpFuX3wm6r8-val":0,"ItgPHCQ1hm6-cmlhcvPcdol-val":0,"ItgPHCQ1hm6-KmmKuXofUzA-val":0,"xVbmMwUk5ug-uGIJ6IdkP7Q-val":0,"Wcsc9U3fMIx-uGIJ6IdkP7Q-val":0};
+        window.cellObject210 = {"totalnJPIfVSHB3O":0,"indicatorUrPbNJ7oJvQ":0,"nJPIfVSHB3O-nehCW5s6Hx4-val":0,"nJPIfVSHB3O-ttFf9vc6pnB-val":0,"nJPIfVSHB3O-Xns0ysCNhcv-val":0,"nJPIfVSHB3O-OKxxCNhyCrd-val":0,"indicatorsvW4HkckDQr":0,"nJPIfVSHB3O-IR5epaaFjxT-val":0,"nJPIfVSHB3O-YpFuX3wm6r8-val":0,"nJPIfVSHB3O-cmlhcvPcdol-val":0,"nJPIfVSHB3O-KmmKuXofUzA-val":0,"fJafOIjKvRu-uGIJ6IdkP7Q-val":0};
         window.thisQuarter211 = window.cellObject211;
         $.each(window.cellObject22,function(indexThisQuarter,valueThisQuarter){
             if(indexThisQuarter.indexOf("-val")>=0){
@@ -170,11 +170,11 @@ $(document).ready(function(){
         $.each(window.thisQuarter211,function(indexThisQuarter,valueThisQuarter){
             var idArray = indexThisQuarter.split("-");
            //onsole.log(parseInt(window.cellObject211[indexThisQuarter]));
-            console.log(parseInt(window.cellObject211));
+            console.log(window.cellObject211);
             //nsole.log(parseInt(window.cellObject210["ItgPHCQ1hm6-"+idArray[1]+"-val"]));
-            console.log(parseInt(window.cellObject210));
+            console.log(window.cellObject210);
             //nsole.log(parseInt(window.cellObject22["nJPIfVSHB3O-"+idArray[1]+"-val"]));
-            console.log(parseInt(window.cellObject22));
+            console.log(window.cellObject22);
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
                 if(typeof window.cellObject211[indexThisQuarter] == "undefined"){
