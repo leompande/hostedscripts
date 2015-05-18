@@ -145,7 +145,12 @@ $(document).ready(function(){
         $.each(window.cellObject22,function(indexThisQuarter,valueThisQuarter){
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
-                window.cellObject22[indexThisQuarter] = inputValue;
+                if(!isNaN(inputValue)){
+                    window.cellObject22[indexThisQuarter] = inputValue;
+                }else{
+                    window.cellObject22[indexThisQuarter] = 0;
+                }
+
 
             }
             });
@@ -154,7 +159,12 @@ $(document).ready(function(){
         $.each(window.cellObject210,function(indexThisQuarter,valueThisQuarter){
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
-                window.cellObject210[indexThisQuarter] = inputValue;
+
+                if(!isNaN(inputValue)){
+                    window.cellObject210[indexThisQuarter] = inputValue;
+                }else{
+                    window.cellObject210[indexThisQuarter] = 0;
+                }
             }
         });
         console.log("window.cellObject210");
@@ -162,7 +172,11 @@ $(document).ready(function(){
         $.each(dataLastQuarter,function(indexLastQuarter,valueLastQuarter){
             if(indexLastQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexLastQuarter).val();
-                window.cellObject211[indexLastQuarter] = inputValue;
+                if(!isNaN(inputValue)){
+                    window.cellObject211[indexLastQuarter] = inputValue;
+                }else{
+                    window.cellObject211[indexLastQuarter] = 0;
+                }
             }
         });
         console.log("window.cellObject211");
