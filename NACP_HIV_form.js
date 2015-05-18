@@ -133,11 +133,25 @@ $(document).ready(function(){
             $.each(dataLastQuarter.dataValues,function(indexLastQuarter,valueLastQuarter){
 
                 if(valueLastQuarter.dataElement =="Z4aNGrX9ZuC"){
-                    //var index = valueLastQuarter.dataElement+"-"+valueLastQuarter.categoryOptionCombo+"-val";
-                    //window.cellObject211[index] = parseInt(valueLastQuarter.value);
+                    var thisQuarter = 0;
+                    var lastQuarter = 0;
+                    if(isNaN($("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").val())){
 
-                    console.log(valueLastQuarter.value);
-                    console.log($("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").val());
+                    }else{
+                        thisQuarter = parseInt($("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").val());
+                    }
+                    if(isNaN(valueLastQuarter.value)){
+
+                    }else{
+                        lastQuarter  = parseInt(valueLastQuarter.value);
+                    }
+
+                    if(thisQuarter<=lastQuarter){
+
+                    }else{
+                        $("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").val("large");
+                        $("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").css({"background-color":"red"});
+                    }
                 }
             });
         }else{
