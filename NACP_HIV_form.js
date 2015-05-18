@@ -146,9 +146,9 @@ $(document).ready(function(){
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
                 if(!isNaN(inputValue)){
-                    window.cellObject22[indexThisQuarter] = inputValue;
-                }else{
                     window.cellObject22[indexThisQuarter] = 0;
+                }else{
+                    window.cellObject22[indexThisQuarter] = inputValue;
                 }
 
 
@@ -159,11 +159,10 @@ $(document).ready(function(){
         $.each(window.cellObject210,function(indexThisQuarter,valueThisQuarter){
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
-
-                if(!isNaN(inputValue)){
-                    window.cellObject210[indexThisQuarter] = inputValue;
-                }else{
+                if(isNaN(inputValue)){
                     window.cellObject210[indexThisQuarter] = 0;
+                }else{
+                    window.cellObject210[indexThisQuarter] = inputValue;
                 }
             }
         });
@@ -172,10 +171,10 @@ $(document).ready(function(){
         $.each(dataLastQuarter,function(indexLastQuarter,valueLastQuarter){
             if(indexLastQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexLastQuarter).val();
-                if(!isNaN(inputValue)){
-                    window.cellObject211[indexLastQuarter] = inputValue;
-                }else{
+                if(isNaN(inputValue)){
                     window.cellObject211[indexLastQuarter] = 0;
+                }else{
+                    window.cellObject211[indexLastQuarter] = inputValue;
                 }
             }
         });
@@ -192,7 +191,6 @@ $(document).ready(function(){
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
                 if(typeof window.cellObject211[indexThisQuarter] == "undefined"){
-
                 }else{
                     var a, b,c;
                     if(typeof window.cellObject210[indexThisQuarter] == "undefined"){}else{a=parseInt(window.cellObject210[indexThisQuarter]);}
