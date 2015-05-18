@@ -145,7 +145,7 @@ $(document).ready(function(){
         $.each(window.cellObject22,function(indexThisQuarter,valueThisQuarter){
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
-                if(!isNaN(parseInt(inputValue))){
+                if(isNaN(parseInt(inputValue))){
                     window.cellObject22[indexThisQuarter] = 0;
                 }else{
                     console.log(parseInt(inputValue));
