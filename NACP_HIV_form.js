@@ -80,15 +80,13 @@ $(document).ready(function(){
 	  var networkTracker = 1;
 	  url = "../dhis-web-commons-stream/ping.action";
 	  setInterval(function(){
-		  
 		  $.ajax({
                     type: "GET", 		//GET or POST or PUT or DELETE verb
                     url: url, 		// Location of the service
                     dataType: "json", 	//Expected data format from server
                     success: function (data) {//On Successful service call
 						
-							autoCalculate.sumUpQuarterData(); 
-						
+							autoCalculate.sumUpQuarterData();
 						
                     },
                     error: function (xhr, textStatus, errorThrown) {
@@ -186,7 +184,6 @@ $(document).ready(function(){
                 if(isNaN(parseInt(inputValue))){
                     window.cellObject22[indexThisQuarter] = 0;
                 }else{
-                   // console.log(parseInt(inputValue));
                     window.cellObject22[indexThisQuarter] = parseInt(inputValue);
                 }
 
@@ -218,8 +215,6 @@ $(document).ready(function(){
                     if(isNaN(window.cellObject22["ItgPHCQ1hm6-"+autoCalculate.getSubId(indexThisQuarter)])){}else{b=parseInt(window.cellObject22["ItgPHCQ1hm6-"+autoCalculate.getSubId(indexThisQuarter)]);window.cellObject22["xVbmMwUk5ug-uGIJ6IdkP7Q-val"];}
                     if(isNaN(window.cellObject211["ZDEAnnS7BO0-"+autoCalculate.getSubId(indexThisQuarter)])){}else{c=parseInt(window.cellObject211["ZDEAnnS7BO0-"+autoCalculate.getSubId(indexThisQuarter)]);window.cellObject211["X0CIZT6HSEo-uGIJ6IdkP7Q-val"];}
                     window.thisQuarter211[""+autoCalculate.getSubId(indexThisQuarter)] = parseInt(c+b+a);
-                    console.log(indexThisQuarter);
-                    console.log(parseInt(c+b+a));
                     $("input#"+indexThisQuarter).val(parseInt(c+b+a))
                 }
 
