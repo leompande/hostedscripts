@@ -2,6 +2,7 @@ $(document).ready(function(){
     // instanciate various class each for specific purpose
   var autoCalculate			= {};
   var orgUnit = dhis2.de.currentOrganisationUnitId;
+  var messageSentMark = false;
   var dataSet = $('#selectedDataSetId').val();
   var dataSetPeriod=$('#selectedPeriodId').val();
     $('#selectedPeriodId').bind("change",function(){
@@ -147,11 +148,35 @@ $(document).ready(function(){
                     }
 
                     if(thisQuarter<=lastQuarter){
-                        $("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").val("large");
+                       // $("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").val("large");
                     }else{
-                        $("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").val("large");
-                        $("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").css({"background-color":"red"});
                         console.log(thisQuarter+" <= "+valueLastQuarter.value+" ?");
+                        if(!messageSentMark){
+                            $.ajax({
+                                type: "GET", 		//GET or POST or PUT or DELETE verb
+                                url: "../app/me", 		// Location of the service
+                                dataType: "json", 	//Expected data format from server
+                                success: function (data) {//On Successful service call
+
+                                    console.log(data);
+
+                                },
+                                error: function (xhr, textStatus, errorThrown) {
+                                    if (409 == xhr.status || 500 == xhr.status) // Invalid value or locked
+                                    {
+                                        //markValue(fieldId, dhis2.de.cst.colorRed);
+                                        setHeaderDelayMessage(xhr.responseText);
+                                    }
+                                    else // Offline, keep local value
+                                    {
+                                        ///setHeaderDelayMessage("some thing is ");
+                                        //markValue(fieldId, resultColor);
+                                        setHeaderDelayMessage("Your offline auto sum will run next time your online");
+                                    }
+                                }// When Service call fails
+                            });
+                            messageSentMark = true;
+                        }
                     }
                 }
             });
