@@ -44,6 +44,7 @@ $(document).ready(function(){
                     success: function (dataThisQuarter) {//On Successful service call
 
                         autoCalculate.produceTotal(dataThisQuarter,dataLastQuarter);
+                        autoCalculate.formatLastQuarterData33Death(dataLastQuarter);
 
 					},
 					error: function (xhr, textStatus, errorThrown) {
@@ -114,7 +115,8 @@ $(document).ready(function(){
         var subId = rowIdArray[1]+"-"+rowIdArray[2];
         return subId;
     }
-    autoCalculate.formatLastQuarterData = function(dataLastQuarter){
+    autoCalculate.formatLastQuarterData211 = function(dataLastQuarter){
+
         if(dataLastQuarter.dataValues){
             $.each(dataLastQuarter.dataValues,function(indexLastQuarter,valueLastQuarter){
                 if(valueLastQuarter.dataElement =="ZDEAnnS7BO0"){
@@ -127,6 +129,21 @@ $(document).ready(function(){
 
         }
 
+    }
+    autoCalculate.formatLastQuarterData33Death = function(dataLastQuarter){
+        if(dataLastQuarter.dataValues){
+            $.each(dataLastQuarter.dataValues,function(indexLastQuarter,valueLastQuarter){
+                if(valueLastQuarter.dataElement =="Z4aNGrX9ZuC"){
+                    //var index = valueLastQuarter.dataElement+"-"+valueLastQuarter.categoryOptionCombo+"-val";
+                    //window.cellObject211[index] = parseInt(valueLastQuarter.value);
+
+                    console.log(valueLastQuarter);
+
+                }
+            });
+        }else{
+
+        }
     }
     autoCalculate.produceTotal = function(dataThisQuarter,dataLastQuarter){
 
@@ -180,15 +197,17 @@ $(document).ready(function(){
         $.each(window.cellObject210,function(indexThisQuarter,valueThisQuarter){
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
+                var inputValue2 = $("input#fJafOIjKvRu-uGIJ6IdkP7Q-val").val();
                 if(isNaN(parseInt(inputValue))){
                     window.cellObject210[indexThisQuarter] = 0;
                 }else{
                     //console.log(parseInt(inputValue));
                     window.cellObject210[indexThisQuarter] = parseInt(inputValue);
+                    window.cellObject210["fJafOIjKvRu-uGIJ6IdkP7Q-val"] = parseInt(inputValue);
                 }
             }
         });
-        autoCalculate.formatLastQuarterData(dataLastQuarter);
+        autoCalculate.formatLastQuarterData211(dataLastQuarter);
         $.each(window.thisQuarter211,function(indexThisQuarter,valueThisQuarter){
             var idArray = indexThisQuarter.split("-");
             if(indexThisQuarter.indexOf("-val")>=0){
@@ -196,9 +215,9 @@ $(document).ready(function(){
                 if(typeof window.cellObject211[indexThisQuarter] == "undefined"){
                 }else{
 
-                    if(isNaN(window.cellObject210["nJPIfVSHB3O-"+autoCalculate.getSubId(indexThisQuarter)])){}else{a=parseInt(window.cellObject210["nJPIfVSHB3O-"+autoCalculate.getSubId(indexThisQuarter)]);}
-                    if(isNaN(window.cellObject22["ItgPHCQ1hm6-"+autoCalculate.getSubId(indexThisQuarter)])){}else{b=parseInt(window.cellObject22["ItgPHCQ1hm6-"+autoCalculate.getSubId(indexThisQuarter)]);}
-                    if(isNaN(window.cellObject211["ZDEAnnS7BO0-"+autoCalculate.getSubId(indexThisQuarter)])){}else{c=parseInt(window.cellObject211["ZDEAnnS7BO0-"+autoCalculate.getSubId(indexThisQuarter)]);}
+                    if(isNaN(window.cellObject210["nJPIfVSHB3O-"+autoCalculate.getSubId(indexThisQuarter)])){}else{a=parseInt(window.cellObject210["nJPIfVSHB3O-"+autoCalculate.getSubId(indexThisQuarter)]);window.cellObject210["fJafOIjKvRu-uGIJ6IdkP7Q-val"];}
+                    if(isNaN(window.cellObject22["ItgPHCQ1hm6-"+autoCalculate.getSubId(indexThisQuarter)])){}else{b=parseInt(window.cellObject22["ItgPHCQ1hm6-"+autoCalculate.getSubId(indexThisQuarter)]);window.cellObject22["xVbmMwUk5ug-uGIJ6IdkP7Q-val"];}
+                    if(isNaN(window.cellObject211["ZDEAnnS7BO0-"+autoCalculate.getSubId(indexThisQuarter)])){}else{c=parseInt(window.cellObject211["ZDEAnnS7BO0-"+autoCalculate.getSubId(indexThisQuarter)]);window.cellObject211["X0CIZT6HSEo-uGIJ6IdkP7Q-val"];}
                     window.thisQuarter211[""+autoCalculate.getSubId(indexThisQuarter)] = parseInt(c+b+a);
                     console.log(indexThisQuarter);
                     console.log(parseInt(c+b+a));
