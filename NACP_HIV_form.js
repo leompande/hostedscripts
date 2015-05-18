@@ -148,7 +148,7 @@ $(document).ready(function(){
                 if(isNaN(parseInt(inputValue))){
                     window.cellObject22[indexThisQuarter] = 0;
                 }else{
-                    console.log(parseInt(inputValue));
+                   // console.log(parseInt(inputValue));
                     window.cellObject22[indexThisQuarter] = parseInt(inputValue);
                 }
 
@@ -163,7 +163,7 @@ $(document).ready(function(){
                 if(isNaN(parseInt(inputValue))){
                     window.cellObject210[indexThisQuarter] = 0;
                 }else{
-                    console.log(parseInt(inputValue));
+                    //console.log(parseInt(inputValue));
                     window.cellObject210[indexThisQuarter] = parseInt(inputValue);
                 }
             }
@@ -176,7 +176,7 @@ $(document).ready(function(){
                 if(isNaN(parseInt(inputValue))){
                     window.cellObject211[indexLastQuarter] = 0;
                 }else{
-                    console.log(parseInt(inputValue));
+                    //console.log(parseInt(inputValue));
                     window.cellObject211[indexLastQuarter] = parseInt(inputValue);
                 }
             }
@@ -195,15 +195,16 @@ $(document).ready(function(){
             //nsole.log(parseInt(window.cellObject22["nJPIfVSHB3O-"+idArray[1]+"-val"]));
             //console.log(window.cellObject22);
             if(indexThisQuarter.indexOf("-val")>=0){
-                var inputValue = $("input#"+indexThisQuarter).val();
+                var a=0, b=0,c=0;
                 if(typeof window.cellObject211[indexThisQuarter] == "undefined"){
                 }else{
-                    var a=0, b=0,c=0;
+
                     if(isNaN(window.cellObject210[indexThisQuarter])){}else{a=parseInt(window.cellObject210[indexThisQuarter]);}
                     if(isNaN(window.cellObject22[indexThisQuarter])){}else{b=parseInt(window.cellObject22[indexThisQuarter]);}
                     if(isNaN(window.cellObject211[indexThisQuarter])){}else{c=parseInt(window.cellObject211[indexThisQuarter]);}
                     window.thisQuarter211[indexThisQuarter] = parseInt(c+b+a);
-//console.log(window.thisQuarter211[indexThisQuarter]);
+                    console.log(indexThisQuarter);
+                    console.log(parseInt(c+b+a));
                     $("input#"+indexThisQuarter).val(parseInt(c+b+a))
                 }
 
