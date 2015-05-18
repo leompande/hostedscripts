@@ -4,6 +4,10 @@ $(document).ready(function(){
   var orgUnit = dhis2.de.currentOrganisationUnitId;
   var dataSet = $('#selectedDataSetId').val();
   var dataSetPeriod=$('#selectedPeriodId').val();
+    $('#selectedPeriodId').bind("change",function(){
+        dataSet = $('#selectedDataSetId').val();
+        dataSetPeriod=$('#selectedPeriodId').val();
+    });
   autoCalculate.getLastQuarterPeriod = function(thisQuarterPeriod){
 	  this.thisQuarterPeriod = thisQuarterPeriod;
 	  var quarterArray = this.thisQuarterPeriod.split("Q");
