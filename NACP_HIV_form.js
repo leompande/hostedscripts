@@ -145,11 +145,11 @@ $(document).ready(function(){
         $.each(window.cellObject22,function(indexThisQuarter,valueThisQuarter){
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
-                if(!isNaN(inputValue)){
+                if(!isNaN(parseInt(inputValue))){
                     window.cellObject22[indexThisQuarter] = 0;
                 }else{
-                    console.log(inputValue);
-                    window.cellObject22[indexThisQuarter] = inputValue;
+                    console.log(parseInt(inputValue));
+                    window.cellObject22[indexThisQuarter] = parseInt(inputValue);
                 }
 
 
@@ -160,11 +160,11 @@ $(document).ready(function(){
         $.each(window.cellObject210,function(indexThisQuarter,valueThisQuarter){
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
-                if(isNaN(inputValue)){
+                if(isNaN(parseInt(inputValue))){
                     window.cellObject210[indexThisQuarter] = 0;
                 }else{
-                    console.log(inputValue);
-                    window.cellObject210[indexThisQuarter] = inputValue;
+                    console.log(parseInt(inputValue));
+                    window.cellObject210[indexThisQuarter] = parseInt(inputValue);
                 }
             }
         });
@@ -173,11 +173,11 @@ $(document).ready(function(){
         $.each(dataLastQuarter,function(indexLastQuarter,valueLastQuarter){
             if(indexLastQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexLastQuarter).val();
-                if(isNaN(inputValue)){
+                if(isNaN(parseInt(inputValue))){
                     window.cellObject211[indexLastQuarter] = 0;
                 }else{
-                    console.log(inputValue);
-                    window.cellObject211[indexLastQuarter] = inputValue;
+                    console.log(parseInt(inputValue));
+                    window.cellObject211[indexLastQuarter] = parseInt(inputValue);
                 }
             }
         });
