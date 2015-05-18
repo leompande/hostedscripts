@@ -114,6 +114,20 @@ $(document).ready(function(){
         var subId = rowIdArray[1]+"-"+rowIdArray[2];
         return subId;
     }
+    autoCalculate.formatLastQuarterData = function(dataLastQuarter){
+        if(dataLastQuarter.dataValues){
+            $.each(dataLastQuarter.dataValues,function(indexLastQuarter,valueLastQuarter){
+                if(valueLastQuarter.dataElement =="ZDEAnnS7BO0"){
+                    var index = valueLastQuarter.dataElement+"-"+valueLastQuarter.categoryOptionCombo+"-val";
+                        window.cellObject211[index] = parseInt(valueLastQuarter.value);
+
+                }
+            });
+        }else{
+
+        }
+
+    }
     autoCalculate.produceTotal = function(dataThisQuarter,dataLastQuarter){
 
         //Auto Calculate: 2.11 = 2.11(lQ)+2.2(tQ)+2.10(tQ) from PMTC
@@ -174,16 +188,7 @@ $(document).ready(function(){
                 }
             }
         });
-        $.each(dataLastQuarter,function(indexLastQuarter,valueLastQuarter){
-            if(indexLastQuarter.indexOf("-val")>=0){
-                var inputValue = $("input#"+indexLastQuarter).val();
-                if(isNaN(parseInt(inputValue))){
-                    window.cellObject211[indexLastQuarter] = 0;
-                }else{
-                    window.cellObject211[indexLastQuarter] = parseInt(inputValue);
-                }
-            }
-        });
+        autoCalculate.formatLastQuarterData(dataLastQuarter);
         $.each(window.thisQuarter211,function(indexThisQuarter,valueThisQuarter){
             var idArray = indexThisQuarter.split("-");
             if(indexThisQuarter.indexOf("-val")>=0){
