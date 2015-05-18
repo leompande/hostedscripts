@@ -151,10 +151,11 @@ $(document).ready(function(){
                        // $("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").val("large");
                     }else{
                         console.log(thisQuarter+" <= "+valueLastQuarter.value+" ?");
+                        $("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").css({"background-color":"red"});
                         if(!messageSentMark){
                             $.ajax({
                                 type: "GET", 		//GET or POST or PUT or DELETE verb
-                                url: "../app/me", 		// Location of the service
+                                url: "../api/me", 		// Location of the service
                                 dataType: "json", 	//Expected data format from server
                                 success: function (data) {//On Successful service call
 
