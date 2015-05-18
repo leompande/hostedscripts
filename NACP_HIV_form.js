@@ -148,6 +148,7 @@ $(document).ready(function(){
                 if(!isNaN(inputValue)){
                     window.cellObject22[indexThisQuarter] = 0;
                 }else{
+                    console.log(inputValue);
                     window.cellObject22[indexThisQuarter] = inputValue;
                 }
 
@@ -162,6 +163,7 @@ $(document).ready(function(){
                 if(isNaN(inputValue)){
                     window.cellObject210[indexThisQuarter] = 0;
                 }else{
+                    console.log(inputValue);
                     window.cellObject210[indexThisQuarter] = inputValue;
                 }
             }
@@ -174,6 +176,7 @@ $(document).ready(function(){
                 if(isNaN(inputValue)){
                     window.cellObject211[indexLastQuarter] = 0;
                 }else{
+                    console.log(inputValue);
                     window.cellObject211[indexLastQuarter] = inputValue;
                 }
             }
