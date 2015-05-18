@@ -147,10 +147,11 @@ $(document).ready(function(){
                     }
 
                     if(thisQuarter<=lastQuarter){
-
+                        $("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").val("large");
                     }else{
                         $("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").val("large");
                         $("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").css({"background-color":"red"});
+                        console.log(thisQuarter+" <= "+valueLastQuarter.value+" ?");
                     }
                 }
             });
