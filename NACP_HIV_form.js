@@ -105,7 +105,11 @@ $(document).ready(function(){
 		},1000);
 	  	}
 	  autoCalculate.sniffOnlineOffline();
-
+    autoCalculate.getSubId = function(rowId){
+        var rowIdArray = rowId.split("-");
+        var subId = rowIdArray[1]+"-"+rowIdArray[2];
+        return subId;
+    }
     autoCalculate.produceTotal = function(dataThisQuarter,dataLastQuarter){
 
         //Auto Calculate: 2.11 = 2.11(lQ)+2.2(tQ)+2.10(tQ) from PMTC
@@ -176,7 +180,7 @@ $(document).ready(function(){
                 if(isNaN(parseInt(inputValue))){
                     window.cellObject211[indexLastQuarter] = 0;
                 }else{
-                    //console.log(parseInt(inputValue));
+                    console.log(parseInt(inputValue));
                     window.cellObject211[indexLastQuarter] = parseInt(inputValue);
                 }
             }
@@ -199,10 +203,10 @@ $(document).ready(function(){
                 if(typeof window.cellObject211[indexThisQuarter] == "undefined"){
                 }else{
 
-                    if(isNaN(window.cellObject210[indexThisQuarter])){}else{a=parseInt(window.cellObject210[indexThisQuarter]);}
-                    if(isNaN(window.cellObject22[indexThisQuarter])){}else{b=parseInt(window.cellObject22[indexThisQuarter]);}
-                    if(isNaN(window.cellObject211[indexThisQuarter])){}else{c=parseInt(window.cellObject211[indexThisQuarter]);}
-                    window.thisQuarter211[indexThisQuarter] = parseInt(c+b+a);
+                    if(isNaN(window.cellObject210["nJPIfVSHB3O-"+autoCalculate.getSubId(indexThisQuarter)])){}else{a=parseInt(window.cellObject210["nJPIfVSHB3O-"+autoCalculate.getSubId(indexThisQuarter)]);}
+                    if(isNaN(window.cellObject22["ItgPHCQ1hm6-"+autoCalculate.getSubId(indexThisQuarter)])){}else{b=parseInt(window.cellObject22["ItgPHCQ1hm6-"+autoCalculate.getSubId(indexThisQuarter)]);}
+                    if(isNaN(window.cellObject211["ZDEAnnS7BO0-"+autoCalculate.getSubId(indexThisQuarter)])){}else{c=parseInt(window.cellObject211["ZDEAnnS7BO0-"+autoCalculate.getSubId(indexThisQuarter)]);}
+                    window.thisQuarter211[""+autoCalculate.getSubId(indexThisQuarter)] = parseInt(c+b+a);
                     console.log(indexThisQuarter);
                     console.log(parseInt(c+b+a));
                     $("input#"+indexThisQuarter).val(parseInt(c+b+a))
