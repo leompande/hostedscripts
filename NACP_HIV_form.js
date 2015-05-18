@@ -180,7 +180,7 @@ $(document).ready(function(){
                 if(isNaN(parseInt(inputValue))){
                     window.cellObject211[indexLastQuarter] = 0;
                 }else{
-                    console.log(parseInt(inputValue));
+                   // console.log(parseInt(inputValue));
                     window.cellObject211[indexLastQuarter] = parseInt(inputValue);
                 }
             }
