@@ -182,6 +182,9 @@ $(document).ready(function(){
             }
         });
         console.log("window.cellObject211");
+        console.log("dataLastQuarter");
+        console.log(dataLastQuarter);
+        console.log("window.cellObject211");
         console.log(window.cellObject211);
         $.each(window.thisQuarter211,function(indexThisQuarter,valueThisQuarter){
             var idArray = indexThisQuarter.split("-");
@@ -195,17 +198,16 @@ $(document).ready(function(){
                 var inputValue = $("input#"+indexThisQuarter).val();
                 if(typeof window.cellObject211[indexThisQuarter] == "undefined"){
                 }else{
-                    var a, b,c;
-                    if(typeof window.cellObject210[indexThisQuarter] == "undefined"){}else{a=parseInt(window.cellObject210[indexThisQuarter]);}
-                    if(typeof window.cellObject22[indexThisQuarter] == "undefined"){}else{b=parseInt(window.cellObject22[indexThisQuarter]);}
-                    if(typeof window.cellObject211[indexThisQuarter] == "undefined"){}else{c=parseInt(window.cellObject211[indexThisQuarter]);}
-                    window.thisQuarter211[indexThisQuarter] = c+b+a;
+                    var a=0, b=0,c=0;
+                    if(isNaN(window.cellObject210[indexThisQuarter])){}else{a=parseInt(window.cellObject210[indexThisQuarter]);}
+                    if(isNaN(window.cellObject22[indexThisQuarter])){}else{b=parseInt(window.cellObject22[indexThisQuarter]);}
+                    if(isNaN(window.cellObject211[indexThisQuarter])){}else{c=parseInt(window.cellObject211[indexThisQuarter]);}
+                    window.thisQuarter211[indexThisQuarter] = parseInt(c+b+a);
 console.log(window.thisQuarter211[indexThisQuarter]);
                 }
 
             }
         });
-        //console.log(window.thisQuarter211);
         /**
          if(dataThisQuarter.dataValues){
         $.each(dataThisQuarter.dataValues,function(indexThisQuarter,valueThisQuarter){
