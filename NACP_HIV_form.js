@@ -129,15 +129,15 @@ $(document).ready(function(){
     }
     autoCalculate.formatLastQuarterData33Death = function(dataLastQuarter){
         if(dataLastQuarter.dataValues){
-            console.log(dataLastQuarter.dataValues);
+
             $.each(dataLastQuarter.dataValues,function(indexLastQuarter,valueLastQuarter){
 
                 if(valueLastQuarter.dataElement =="Z4aNGrX9ZuC"){
                     //var index = valueLastQuarter.dataElement+"-"+valueLastQuarter.categoryOptionCombo+"-val";
                     //window.cellObject211[index] = parseInt(valueLastQuarter.value);
 
-                    //console.log(valueLastQuarter);
-
+                    console.log(valueLastQuarter.value);
+                    console.log($("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").val());
                 }
             });
         }else{
@@ -199,7 +199,6 @@ $(document).ready(function(){
                 if(isNaN(parseInt(inputValue))){
                     window.cellObject210[indexThisQuarter] = 0;
                 }else{
-                    //console.log(parseInt(inputValue));
                     window.cellObject210[indexThisQuarter] = parseInt(inputValue);
                     window.cellObject210["fJafOIjKvRu-uGIJ6IdkP7Q-val"] = parseInt(inputValue);
                 }
