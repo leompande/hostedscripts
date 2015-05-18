@@ -129,13 +129,14 @@ $(document).ready(function(){
     }
     autoCalculate.formatLastQuarterData33Death = function(dataLastQuarter){
         if(dataLastQuarter.dataValues){
+            console.log(dataLastQuarter.dataValues);
             $.each(dataLastQuarter.dataValues,function(indexLastQuarter,valueLastQuarter){
-                console.log(valueLastQuarter);
+
                 if(valueLastQuarter.dataElement =="Z4aNGrX9ZuC"){
                     //var index = valueLastQuarter.dataElement+"-"+valueLastQuarter.categoryOptionCombo+"-val";
                     //window.cellObject211[index] = parseInt(valueLastQuarter.value);
 
-                    console.log(valueLastQuarter);
+                    //console.log(valueLastQuarter);
 
                 }
             });
