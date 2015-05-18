@@ -32,7 +32,7 @@ $(document).ready(function(){
                     url: lastQuarterUrl, 		// Location of the service
                     dataType: "json", 	//Expected data format from server
                     success: function (dataLastQuarter) {//On Successful service call
-						
+						console.log(dataLastQuarter);
 	    $.ajax({
                     type: "GET", 		//GET or POST or PUT or DELETE verb
                     url: thisQuarterUrl, 		// Location of the service
@@ -159,8 +159,6 @@ $(document).ready(function(){
 
             }
             });
-        //console.log("window.cellObject22");
-        //console.log(window.cellObject22);
         $.each(window.cellObject210,function(indexThisQuarter,valueThisQuarter){
             if(indexThisQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexThisQuarter).val();
@@ -172,32 +170,18 @@ $(document).ready(function(){
                 }
             }
         });
-        //console.log("window.cellObject210");
-        //console.log(window.cellObject210);
         $.each(dataLastQuarter,function(indexLastQuarter,valueLastQuarter){
             if(indexLastQuarter.indexOf("-val")>=0){
                 var inputValue = $("input#"+indexLastQuarter).val();
                 if(isNaN(parseInt(inputValue))){
                     window.cellObject211[indexLastQuarter] = 0;
                 }else{
-                   // console.log(parseInt(inputValue));
                     window.cellObject211[indexLastQuarter] = parseInt(inputValue);
                 }
             }
         });
-        //console.log("window.cellObject211");
-        //console.log("dataLastQuarter");
-        //console.log(dataLastQuarter);
-        //console.log("window.cellObject211");
-        //console.log(window.cellObject211);
         $.each(window.thisQuarter211,function(indexThisQuarter,valueThisQuarter){
             var idArray = indexThisQuarter.split("-");
-           //onsole.log(parseInt(window.cellObject211[indexThisQuarter]));
-            //console.log(window.cellObject211);
-            //nsole.log(parseInt(window.cellObject210["ItgPHCQ1hm6-"+idArray[1]+"-val"]));
-            //console.log(window.cellObject210);
-            //nsole.log(parseInt(window.cellObject22["nJPIfVSHB3O-"+idArray[1]+"-val"]));
-            //console.log(window.cellObject22);
             if(indexThisQuarter.indexOf("-val")>=0){
                 var a=0, b=0,c=0;
                 if(typeof window.cellObject211[indexThisQuarter] == "undefined"){
@@ -236,7 +220,6 @@ $(document).ready(function(){
          Hence Formular translation of Auto Calculate: 2.11 = 2.11(lQ)+2.2(tQ)+2.10(tQ) will be
          */
 
-        //resultThisQuarter = resultLastQuarter + inputThisQuarter22 + inputThisQuarter210;
 
     }
 });
