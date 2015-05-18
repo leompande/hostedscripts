@@ -36,7 +36,7 @@ $(document).ready(function(){
                     url: lastQuarterUrl, 		// Location of the service
                     dataType: "json", 	//Expected data format from server
                     success: function (dataLastQuarter) {//On Successful service call
-						console.log(dataLastQuarter);
+                        autoCalculate.formatLastQuarterData33Death(dataLastQuarter);
 	    $.ajax({
                     type: "GET", 		//GET or POST or PUT or DELETE verb
                     url: thisQuarterUrl, 		// Location of the service
@@ -44,7 +44,6 @@ $(document).ready(function(){
                     success: function (dataThisQuarter) {//On Successful service call
 
                         autoCalculate.produceTotal(dataThisQuarter,dataLastQuarter);
-                        autoCalculate.formatLastQuarterData33Death(dataLastQuarter);
 
 					},
 					error: function (xhr, textStatus, errorThrown) {
