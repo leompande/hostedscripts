@@ -1,14 +1,20 @@
 $(document).ready(function(){
     // instanciate various class each for specific purpose
   var autoCalculate			= {};
+    window.dataLastQuarter = null;
   var orgUnit = dhis2.de.currentOrganisationUnitId;
   var messageSentMark = false;
   var dataSet = $('#selectedDataSetId').val();
   var dataSetPeriod=$('#selectedPeriodId').val();
+
     $('#selectedPeriodId').bind("change",function(){
         dataSet = $('#selectedDataSetId').val();
         dataSetPeriod=$('#selectedPeriodId').val();
     });
+
+   $("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").bind("change",function(){
+       autoCalculate.formatLastQuarterData33Death(window.dataLastQuarter);
+   });
   autoCalculate.getLastQuarterPeriod = function(thisQuarterPeriod){
 	  this.thisQuarterPeriod = thisQuarterPeriod;
 	  var quarterArray = this.thisQuarterPeriod.split("Q");
@@ -37,7 +43,8 @@ $(document).ready(function(){
                     url: lastQuarterUrl, 		// Location of the service
                     dataType: "json", 	//Expected data format from server
                     success: function (dataLastQuarter) {//On Successful service call
-                        autoCalculate.formatLastQuarterData33Death(dataLastQuarter);
+                        window.dataLastQuarter = dataLastQuarter;
+
 	    $.ajax({
                     type: "GET", 		//GET or POST or PUT or DELETE verb
                     url: thisQuarterUrl, 		// Location of the service
