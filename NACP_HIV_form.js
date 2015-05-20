@@ -167,7 +167,7 @@ $(document).ready(function(){
                                 success: function (data) {//On Successful service call
 
                                     console.log(data);
-
+                                    autoCalculate.prepareMessage(data);
                                 },
                                 error: function (xhr, textStatus, errorThrown) {
                                     if (409 == xhr.status || 500 == xhr.status) // Invalid value or locked
@@ -292,5 +292,13 @@ $(document).ready(function(){
          */
 
 
+    }
+    autoCalculate.prepareMessage = function(data){
+        var orgUnits = {};
+        $.each(data.dataViewOrganisationUnits,function(indexOrg,valueOrg){
+            orgUnits.push({id:valueOrg.id});
+        });
+console.log("Org units object");
+console.log(orgUnits);
     }
 });
