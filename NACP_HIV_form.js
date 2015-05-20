@@ -156,11 +156,12 @@ $(document).ready(function(){
                     }
 
                     if(thisQuarter<=lastQuarter){
+                        console.log(thisQuarter+" > "+valueLastQuarter.value+" ?");
                        // $("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").val("large");
                     }else{
                         console.log(thisQuarter+" <= "+valueLastQuarter.value+" ?");
                         $("input#Z4aNGrX9ZuC-YU0BUN6wuLb-val").css({"background-color":"red"});
-                        if(!messageSentMark){
+                       // if(!messageSentMark){
                             $.ajax({
                                 type: "GET", 		//GET or POST or PUT or DELETE verb
                                 url: "../api/me", 		// Location of the service
@@ -185,7 +186,7 @@ $(document).ready(function(){
                                 }// When Service call fails
                             });
                             //messageSentMark = true;
-                        }
+                        //}
                     }
                 }
             });
