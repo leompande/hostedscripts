@@ -137,6 +137,7 @@ $(document).ready(function(){
 
     }
     autoCalculate.formatLastQuarterData33Death = function(dataLastQuarter){
+        console.log(dataLastQuarter);
         if(dataLastQuarter.dataValues){
 
             $.each(dataLastQuarter.dataValues,function(indexLastQuarter,valueLastQuarter){
