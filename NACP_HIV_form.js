@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    alert("abcd");
     // instanciate various class each for specific purpose
   var autoCalculate			= {};
     window.dataLastQuarter = null;
